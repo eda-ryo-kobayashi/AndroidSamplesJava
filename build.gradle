@@ -1,21 +1,48 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+
+    // この中で定義したプロパティはapp/build.gradleから参照できる
+    ext {
+
+        version_code = 1
+        version_name = "0.1.0"
+
+        // build
+        compile_sdk_version = 26
+        build_tools_version = "26.0.2"
+        application_id = "jp.edainc.androidsamplesjava"
+        min_sdk_version = 21
+        target_sdk_version = 26
+
+        // library
+        support_lib_version = '26.0.2'
+        dagger_version = '2.11'
+        orma_version = '4.2.5'
+        retrofit_version = '2.3.0'
+        okhttp_version = '3.8.1'
+        leak_canary_version = '1.5.1'
+    }
+
     repositories {
         jcenter()
+        // 以下のリポジトリの指定を追加
         maven { url "https://maven.google.com" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // AndroidStudio2系ではデフォルトでLambdaがサポートされていないので、
+        // Retrolambdaライブラリを使用する
+        // (3系だとJava8なので、デフォルトでLambda記法が使える)
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        // 以下のリポジトリの指定を追加
         maven { url "https://maven.google.com" }
     }
 }
