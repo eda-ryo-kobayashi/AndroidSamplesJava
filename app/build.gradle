@@ -169,4 +169,8 @@ dependencies {
     // 画像読み込みライブラリ。キャッシュなどをライブラリ側で行なってくれる
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+    // Leonids
+    // パーティクルを表示してくれるライブラリ。
+    compile 'com.plattysoft.leonids:LeonidsLib:1.3.2'
 }

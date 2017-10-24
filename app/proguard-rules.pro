@@ -25,7 +25,7 @@
 #-renamesourcefileattribute SourceFile
 
 # App Specific
--keep class jp.edainc.androidsamplesjava.data.api.responses.** { *; }
+-keep class jp.edainc.androidsamplesjava.data.network.responses.** { *; }
 -keep class jp.edainc.androidsamplesjava.model.** { *; }
 
 # RetroLambda

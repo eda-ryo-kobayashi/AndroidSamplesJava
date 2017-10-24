@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jp.edainc.androidsamplesjava.Activity_Main">
+    tools:context="jp.edainc.androidsamplesjava.feature.main.Activity_Main">
 
     <TextView
         android:layout_width="wrap_content"
