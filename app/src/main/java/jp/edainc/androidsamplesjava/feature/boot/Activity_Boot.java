@@ -12,6 +12,7 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import jp.edainc.androidsamplesjava.R;
 import jp.edainc.androidsamplesjava.databinding.ActivityBootBinding;
+import jp.edainc.androidsamplesjava.feature.main.Activity_Main;
 import jp.edainc.androidsamplesjava.ui.activity.Activity_Base;
 import jp.edainc.androidsamplesjava.utility.AppUpdateChecker;
 
@@ -36,6 +37,8 @@ public class Activity_Boot extends Activity_Base {
             // layout observable tree登録
             // スプラッシュアニメーション遅延実行
 
+            AppUpdateChecker.onActivityCreated(this);
+
         } else {
 
             // ログイン
@@ -57,10 +60,11 @@ public class Activity_Boot extends Activity_Base {
                 if(isFinishing()) return;
                 // ログイン
                 login();
+                finish();
             });
     }
 
     private void login() {
-
+        startActivity(Activity_Main.createIntent(this));
     }
 }

@@ -3,13 +3,15 @@
           package="jp.edainc.androidsamplesjava">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:allowBackup="false"
+        android:icon="${icon}"
+        android:label="${applicationName}"
+        android:roundIcon="${roundIcon}"
+        android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.boot.Activity_Boot"
+        <activity
+            android:name=".feature.boot.Activity_Boot"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -18,7 +20,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".feature.main.Activity_Main" />
+        <activity
+            android:name=".feature.main.Activity_Main"
+            android:screenOrientation="portrait"/>
 
         <receiver android:name=".service.UpdateAppReceiver">
             <intent-filter>
