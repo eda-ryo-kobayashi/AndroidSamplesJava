@@ -23,3 +23,45 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# App Specific
+-keep class jp.edainc.androidsamplesjava.data.api.responses.** { *; }
+-keep class jp.edainc.androidsamplesjava.model.** { *; }
+
+# RetroLambda
+-dontwarn java.lang.invoke.*
+
+# Okio(OkHttp)
+-dontwarn java.nio.file.*
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# Retrofit2
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+# Gson
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+-keepattributes *Annotation*
+-keepattributes EnclosingMethod
+
+# Dagger2
+-dontwarn com.google.errorprone.annotations.DoNotMock
+-dontwarn com.google.errorprone.annotations.ForOverride
+-dontwarn com.google.errorprone.annotations.CanIgnoreReturnValue
+
+# Orma なぜかこいつにnotifyDatasetChangedが無いと言われる。使わなければ大丈夫だと思う
+# or 使わないと警告が出る？
+-dontwarn com.github.gfx.android.orma.widget.OrmaRecyclerViewAdapter
+
+# Picasso
+-dontwarn com.squareup.okhttp.**
