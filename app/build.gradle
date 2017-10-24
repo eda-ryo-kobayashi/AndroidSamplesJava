@@ -14,7 +14,51 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    // flavor
+    final default_flavor = "default"
+    flavorDimensions default_flavor
+
+    productFlavors {
+
+        mock {
+            dimension default_flavor
+            // applicationIdを変更すると、異なるFlavorでビルドしたアプリが端末内で共存できる
+            applicationIdSuffix ".mock"
+            // AndroidManifest内で使用できるプロパティを設定
+            manifestPlaceholders = [
+                    applicationName : application_name + " mock",
+                    configurationName : config_name + " mock",
+                    icon : "@mipmap/ic_launcher",
+                    roundIcon : "@mipmap/ic_launcher_round",
+            ]
+        }
+
+        dev {
+            dimension default_flavor
+            applicationIdSuffix ".dev"
+            manifestPlaceholders = [
+                    applicationName : application_name + " dev",
+                    configurationName : config_name + " dev",
+                    icon : "@mipmap/ic_launcher",
+                    roundIcon : "@mipmap/ic_launcher_round",
+            ]
+        }
+
+        pro {
+            dimension default_flavor
+            manifestPlaceholders = [
+                    applicationName : application_name,
+                    icon : "@mipmap/ic_launcher",
+                    roundIcon : "@mipmap/ic_launcher_round",
+            ]
+        }
+
+    }
+
     buildTypes {
+        debug {
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -32,6 +76,20 @@ android {
         enabled = true
     }
 
+    // flavorとbuildTypeの組み合わせでフィルタリング
+    variantFilter { variant ->
+        String buildTypeName = variant.buildType.name;
+        String flavorDef = variant.getFlavors().get(0).name.toLowerCase()
+        if(flavorDef.contains('mock')) {
+            if(buildTypeName.equals('release')) {
+                variant.setIgnore(true)
+            }
+        } else if(flavorDef.contains('pro')) {
+            if(buildTypeName.equals('debug')) {
+                variant.setIgnore(true)
+            }
+        }
+    }
 }
 
 dependencies {

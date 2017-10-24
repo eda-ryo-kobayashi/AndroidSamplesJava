@@ -8,6 +8,9 @@ buildscript {
         version_code = 1
         version_name = "0.1.0"
 
+        application_name = "Android Samples Java"
+        config_name = "テスト"
+
         // build
         compile_sdk_version = 26
         build_tools_version = "26.0.2"
