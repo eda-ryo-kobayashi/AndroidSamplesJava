@@ -9,6 +9,7 @@ import jp.edainc.androidsamplesjava.data.db.DatabaseModule;
 import jp.edainc.androidsamplesjava.data.network.ApiModule;
 import jp.edainc.androidsamplesjava.data.preference.PreferenceModule;
 import jp.edainc.androidsamplesjava.di.NetworkModule;
+import jp.edainc.androidsamplesjava.repository.UserRepository;
 
 /**
  * Created by kobayashiryou on 2017/10/25.
@@ -34,4 +35,5 @@ public interface DataAccessComponent {
         DataAccessComponent build();
     }
 
+    void inject(UserRepository repo);
 }

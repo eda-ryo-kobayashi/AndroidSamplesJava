@@ -10,6 +10,8 @@ import jp.edainc.androidsamplesjava.App;
 
 public class UserData {
 
+    // どのプラットフォームでログインしているか bit フラグ
+
     UserData(App app) {
 
     }
