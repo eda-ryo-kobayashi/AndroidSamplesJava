@@ -1,5 +1,7 @@
 package jp.edainc.androidsamplesjava.data.network;
 
+import static jp.edainc.androidsamplesjava.data.network.ServerInfo.API_PATH;
+
 /**
  * Created by kobayashiryou on 2017/10/24.
  *
@@ -9,5 +11,5 @@ package jp.edainc.androidsamplesjava.data.network;
 public final class ApiPath {
     private ApiPath() {}
 
-    public static final String LOGIN = "/login";
+    public static final String LOGIN = API_PATH + "/login";
 }

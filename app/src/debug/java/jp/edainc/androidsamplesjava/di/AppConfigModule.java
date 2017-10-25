@@ -13,13 +13,13 @@ import timber.log.Timber;
 /**
  * Created by kobayashiryou on 2017/10/25.
  *
- * デバッグモジュール
+ * アプリケーション設定モジュール
  */
 
 @Module
-public class DebugModule {
+public class AppConfigModule {
 
-    DebugModule(App app) {
+    AppConfigModule(App app) {
 
         if(Timber.treeCount() <= 0) {
             Timber.plant(new Timber.DebugTree());

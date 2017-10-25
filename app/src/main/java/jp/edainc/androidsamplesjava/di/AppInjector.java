@@ -21,7 +21,7 @@ public final class AppInjector {
         DaggerAppComponent
             .builder()
             .application(app)
-            .debug(new DebugModule(app))
+            .appConfig(new AppConfigModule(app))
             .build()
             .inject(app);
 

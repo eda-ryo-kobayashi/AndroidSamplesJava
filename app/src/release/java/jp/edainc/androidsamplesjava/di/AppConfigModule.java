@@ -13,11 +13,11 @@ import timber.log.Timber;
 /**
  * Created by kobayashiryou on 2017/10/25.
  *
- * デバッグモジュール
+ * アプリケーション設定モジュール
  */
 
 @Module
-public class DebugModule {
+public class AppConfigModule {
 
     DebugModule(App app) {
 

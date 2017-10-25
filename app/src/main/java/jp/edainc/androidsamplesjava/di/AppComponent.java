@@ -18,7 +18,7 @@ import jp.edainc.androidsamplesjava.App;
     AppModule.class,
     AndroidInjectionModule.class,
     ActivityBuilder.class,
-    DebugModule.class
+    AppConfigModule.class
 })
 interface AppComponent {
 
@@ -29,7 +29,7 @@ interface AppComponent {
         Builder application(App app);
 
         @BindsInstance
-        Builder debug(DebugModule debug);
+        Builder appConfig(AppConfigModule debug);
 
         AppComponent build();
     }
