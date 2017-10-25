@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
+import jp.edainc.androidsamplesjava.di.AppInjector;
 
 /**
  * Created by kobayashiryou on 2017/10/24.
@@ -33,6 +34,8 @@ public class App extends Application implements AppContext, HasActivityInjector 
         }
 
         LeakCanary.install(this);
+
+        AppInjector.inject(this);
     }
 
     @Override
