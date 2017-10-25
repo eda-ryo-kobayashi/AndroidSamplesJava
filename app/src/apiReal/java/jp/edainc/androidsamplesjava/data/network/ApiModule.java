@@ -4,6 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import retrofit2.Retrofit;
 
 /**
  * Created by kobayashiryou on 2017/10/25.
@@ -16,7 +17,7 @@ public class ApiModule {
 
     @Singleton
     @Provides
-    LoginApi providesLoginApi() {
-        return new LoginApiMock();
+    LoginApi providesLoginApi(Retrofit r) {
+        return r.create(LoginApi.class);
     }
 }

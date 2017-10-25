@@ -7,5 +7,5 @@ package jp.edainc.androidsamplesjava.data.network.response;
  */
 
 public class BaseResponse {
-    int statusCode;
+    public int statusCode;
 }
