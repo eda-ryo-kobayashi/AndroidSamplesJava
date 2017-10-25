@@ -24,6 +24,7 @@ public class UserRepository {
     }
 
     // メールアドレス・パスワードでログイン
+    // Googleでログイン
     // Twitterでログイン
     // Facebookでログイン
     // LINEでログイン

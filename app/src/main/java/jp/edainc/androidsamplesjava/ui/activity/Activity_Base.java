@@ -20,6 +20,8 @@ public class Activity_Base extends AppCompatActivity implements ActivityContext 
     private ActivityLifecycleProvider provider = new ActivityLifecycleProvider();
     private RxPermissions permissions;
 
+    // TODO SNSログインのCredentialのリフレッシュに対応する
+
     @Override
     public ActivityLifecycleProvider lifecycleProvider() {
         return provider;
