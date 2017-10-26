@@ -278,13 +278,13 @@
     <color name="white">#FFFFFF</color>
 
     <!-- Colors for the app -->
-    <color name="colorPrimary">@color/orange_500</color>
-    <color name="colorPrimaryDark">@color/orange_700</color>
-    <color name="colorPrimaryLight">@color/orange_100</color>
-    <color name="colorAccent">@color/deep_orange_500</color>
+    <color name="colorPrimary">@color/light_blue_500</color>
+    <color name="colorPrimaryDark">@color/light_blue_700</color>
+    <color name="colorPrimaryLight">@color/light_blue_100</color>
+    <color name="colorAccent">@color/indigo_500</color>
     <color name="colorPrimaryText">@color/grey_900</color>
     <color name="colorSecondaryText">@color/grey_600</color>
-    <color name="colorIcons">@color/grey_900</color>
+    <color name="colorIcons">@color/white</color>
     <color name="colorDivider">@color/grey_400</color>
 
     <!--Light Background Dark Text-->

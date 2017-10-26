@@ -4,10 +4,9 @@
     <drawable name="window_background">@color/white</drawable>
 
     <!-- スプラッシュの背景色 -->
-    <drawable name="splash_background">@color/colorPrimary</drawable>
+    <drawable name="splash_background">@color/white</drawable>
 
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <!-- Base application theme. -->

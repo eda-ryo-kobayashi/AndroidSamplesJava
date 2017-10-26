@@ -10,6 +10,8 @@
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
+                <!-- ホーム画面にランチャーとして追加される -->
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>

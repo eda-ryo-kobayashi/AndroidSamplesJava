@@ -30,12 +30,11 @@ public class Activity_Boot extends Activity_Base {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO アプリケーション更新チェック
+        // アプリケーション更新チェック
         if(AppUpdateChecker.isFirstLaunchFromLastUpdate(this)) {
 
             binding = DataBindingUtil.setContentView(this, R.layout.activity_boot);
-            // layout observable tree登録
-            // スプラッシュアニメーション遅延実行
+            binding.logo.animate().alpha(1.0f).setDuration(500).start();
 
             AppUpdateChecker.onActivityCreated(this);
 

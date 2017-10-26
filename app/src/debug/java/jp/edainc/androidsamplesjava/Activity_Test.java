@@ -16,6 +16,9 @@ import jp.edainc.androidsamplesjava.feature.main.Activity_Main;
  * Created by kobayashiryou on 2017/09/15.
  *
  * テストアクティビティ
+ * デバッグ実行時にアプリ起動時に表示する
+ * デバッグのマニフェストにランチャーとして登録すれば
+ * ホーム画面からこの画面を起動できる
  */
 
 public class Activity_Test extends AppCompatActivity {
