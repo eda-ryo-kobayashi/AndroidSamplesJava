@@ -1,4 +1,4 @@
-package jp.edainc.androidsamplesjava.service;
+package jp.edainc.androidsamplesjava.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

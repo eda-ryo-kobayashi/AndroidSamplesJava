@@ -9,6 +9,7 @@ import jp.edainc.androidsamplesjava.data.db.DatabaseModule;
 import jp.edainc.androidsamplesjava.data.network.ApiModule;
 import jp.edainc.androidsamplesjava.data.preference.PreferenceModule;
 import jp.edainc.androidsamplesjava.di.NetworkModule;
+import jp.edainc.androidsamplesjava.repository.GithubRepository;
 import jp.edainc.androidsamplesjava.repository.UserRepository;
 
 /**
@@ -36,4 +37,5 @@ public interface DataAccessComponent {
     }
 
     void inject(UserRepository repo);
+    void inject(GithubRepository repo);
 }

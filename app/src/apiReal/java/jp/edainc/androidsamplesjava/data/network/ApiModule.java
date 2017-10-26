@@ -20,4 +20,10 @@ public class ApiModule {
     LoginApi providesLoginApi(Retrofit r) {
         return r.create(LoginApi.class);
     }
+
+    @Singleton
+    @Provides
+    GetRepositoriesApi providesGetRepositoriesApi(Retrofit r) {
+        return r.create(GetRepositoriesApi.class);
+    }
 }

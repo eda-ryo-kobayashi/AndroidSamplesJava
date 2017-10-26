@@ -19,4 +19,10 @@ public class ApiModule {
     LoginApi providesLoginApi() {
         return new LoginApiMock();
     }
+
+    @Singleton
+    @Provides
+    GetRepositoriesApi providesGetRepositoriesApi() {
+        return new GetRepositoriesApiMock();
+    }
 }

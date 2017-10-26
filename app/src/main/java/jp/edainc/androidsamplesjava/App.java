@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
+import jp.edainc.androidsamplesjava.data.DataAccessComponent;
 import jp.edainc.androidsamplesjava.di.AppInjector;
 
 /**
@@ -23,6 +24,9 @@ public class App extends Application implements AppContext, HasActivityInjector 
 
     @Inject
     DispatchingAndroidInjector<Activity> daInjector;
+
+    @Inject
+    DataAccessComponent dataAccessComponent;
 
     @Override
     public void onCreate() {
@@ -41,5 +45,10 @@ public class App extends Application implements AppContext, HasActivityInjector 
     @Override
     public AndroidInjector<Activity> activityInjector() {
         return daInjector;
+    }
+
+    @Override
+    public DataAccessComponent dataAccessComponent() {
+        return dataAccessComponent;
     }
 }

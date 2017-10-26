@@ -12,4 +12,5 @@ public final class ApiPath {
     private ApiPath() {}
 
     public static final String LOGIN = API_PATH + "/login";
+    static final String GET_REPOSITORIES = "/repositories";
 }

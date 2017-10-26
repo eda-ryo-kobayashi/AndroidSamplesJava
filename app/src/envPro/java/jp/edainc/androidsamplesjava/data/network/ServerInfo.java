@@ -9,7 +9,7 @@ package jp.edainc.androidsamplesjava.data.network;
 public final class ServerInfo {
 
     private static final String PROTOCOL = "https://";
-    public static final String DOMAIN = "example.com";
+    public static final String DOMAIN = "api.github.com";
 
     public static final String URL = PROTOCOL + DOMAIN;
     public static final String API_PATH = "/api";
