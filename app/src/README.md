@@ -5,14 +5,15 @@
 
 ### メイン
 - main : 全てのビルドタイプ・プロダクトフレーバーで共通するソース
+
 ### ビルドタイプ
 - debug : デバッグ。ここには主にログやテスト画面を入れる。
 - release : リリース。ここにはリリースの処理が入る。
+
 ### プロダクトフレーバー
 プロダクトフレーバーは自由に設定できる。
 以下は例
-- mock : サンドボックス。サーバーAPIの値を固定で返すなど、ネットワークがなくても動作するような作り。
-- dev : 開発環境。サーバーの向先や開発版で行う処理など。
+- dev : 開発環境。テストサーバーや開発版で行う処理など。
 - pro : 本番環境。
 
 フレーバーにはdimensionというパラメータがあり、
@@ -21,19 +22,21 @@
 
 例) 3つのdimensionがあるとする
 
-default, network, database
+env, network, database
 
-それぞれ以下のフレーバーがあるとする
+各dimensionそれぞれに以下のフレーバーがあるとする
 
-- default : mock, dev, pro
-- network : realapi, fakeapi
-- database : realdb, fakedb
+- env : envDev, envPro
+- network : apiReal, apiFake
+- database : dbReal, dbFake
 
 以上のフレーバーの組み合わせは全部で
 
-default(3) x network(2) x database(2)
+default(2) x network(2) x database(2)
 
-の12通りある。
+の8通りある。
+
+実際には不要な組み合わせがあるので、build.gradleに設定を書く
 
 ### テスト系
 - androidTest : Androidに依存するクラスのテスト
