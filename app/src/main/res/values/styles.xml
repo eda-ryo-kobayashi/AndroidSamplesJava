@@ -15,6 +15,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorPrimaryText</item>
 
         <!-- 何もない時の背景色 -->
         <item name="android:windowBackground">@drawable/window_background</item>

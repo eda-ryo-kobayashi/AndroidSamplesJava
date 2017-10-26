@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidSamplesJava</string>
+
+    <string name="aka">a.k.a. %1$s</string>
 </resources>

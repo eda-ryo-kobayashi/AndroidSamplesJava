@@ -19,13 +19,16 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <activity
             android:name=".feature.main.Activity_Main"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".feature.detail.Activity_RepositoryDetail"
             android:screenOrientation="portrait"/>
 
         <receiver android:name=".receiver.UpdateAppReceiver">

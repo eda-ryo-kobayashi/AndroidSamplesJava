@@ -21,8 +21,13 @@ import jp.edainc.androidsamplesjava.databinding.ViewRepositoryListItemBinding;
 
 class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryListAdapter.ViewHolder> {
 
+    interface OnClickItemListener {
+        void onClick(RepositoryListItem item);
+    }
+
     private LayoutInflater inflater;
     private final List<RepositoryListItem> items = new ArrayList<>();
+    private OnClickItemListener clickItemListener;
 
     RepositoryListAdapter(Context context) {
         inflater = LayoutInflater.from(context);
@@ -32,6 +37,10 @@ class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryListAdapter.V
         items.clear();
         items.addAll(newItems);
         notifyDataSetChanged();
+    }
+
+    void setClickItemListener(OnClickItemListener listener) {
+        clickItemListener = listener;
     }
 
     @Override
@@ -51,14 +60,21 @@ class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryListAdapter.V
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        private RepositoryListItem item;
         private ViewRepositoryListItemBinding binding;
 
         ViewHolder(View itemView) {
             super(itemView);
             binding = DataBindingUtil.bind(itemView);
+            binding.item.setOnClickListener(v -> {
+                if(item != null && clickItemListener != null) {
+                    clickItemListener.onClick(item);
+                }
+            });
         }
 
         void setItem(RepositoryListItem item) {
+            this.item = item;
             binding.setItem(item);
         }
     }

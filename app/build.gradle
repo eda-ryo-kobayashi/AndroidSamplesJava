@@ -110,6 +110,7 @@ dependencies {
     // Googleが提供しているAndroidのサポートライブラリ。現状必須
     compile "com.android.support:appcompat-v7:$support_lib_version"
     compile "com.android.support:recyclerview-v7:$support_lib_version"
+    compile "com.android.support:cardview-v7:$support_lib_version"
     compile "com.android.support:design:$support_lib_version"
     compile "com.android.support:customtabs:$support_lib_version"
 

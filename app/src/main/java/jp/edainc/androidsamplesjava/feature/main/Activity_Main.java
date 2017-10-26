@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 
 import java.util.ArrayList;
 
 import jp.edainc.androidsamplesjava.R;
 import jp.edainc.androidsamplesjava.databinding.ActivityMainBinding;
+import jp.edainc.androidsamplesjava.feature.detail.Activity_RepositoryDetail;
 import jp.edainc.androidsamplesjava.model.Repository;
 import jp.edainc.androidsamplesjava.ui.activity.Activity_Base;
+import jp.edainc.androidsamplesjava.utility.ViewUtility;
 import jp.edainc.androidsamplesjava.viewmodel.RepositoryViewModel;
 
 /**
@@ -39,7 +42,12 @@ public class Activity_Main extends Activity_Base {
         binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorIcons));
 
         adapter = new RepositoryListAdapter(this);
+        adapter.setClickItemListener(item -> {
+            ViewUtility.disableFor(1000, binding.content.list, lifecycleProvider().onStart());
+            startActivity(Activity_RepositoryDetail.createIntent(this, item.repo));
+        });
         binding.content.list.setAdapter(adapter);
+        binding.content.list.setNestedScrollingEnabled(false);
 
         repoVM = new RepositoryViewModel(appContext(), lifecycleProvider().onCreate());
         repoVM.getRepositories(
@@ -49,6 +57,7 @@ public class Activity_Main extends Activity_Base {
                     items.add(new RepositoryListItem(repo));
                 }
                 adapter.setItems(items);
+                binding.content.loading.setVisibility(View.GONE);
             },
             null);
     }
