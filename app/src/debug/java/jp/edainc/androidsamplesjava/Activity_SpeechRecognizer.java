@@ -10,6 +10,7 @@ import android.util.SparseArray;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jp.edainc.androidsamplesjava.ui.activity.Activity_Base;
@@ -27,6 +28,8 @@ public class Activity_SpeechRecognizer extends Activity_Base {
 
     private boolean isListening = false;
     private SpeechRecognizer sr;
+
+    private final List<String> resultData = new ArrayList<>();
 
     static {
         ERRORS.append(SpeechRecognizer.ERROR_NETWORK_TIMEOUT, "ERROR_NETWORK_TIMEOUT");
@@ -69,6 +72,7 @@ public class Activity_SpeechRecognizer extends Activity_Base {
             @Override
             public void onReadyForSpeech(Bundle params) {
                 Timber.d("onReadyForSpeech");
+                resultData.clear();
             }
 
             @Override
@@ -107,6 +111,7 @@ public class Activity_SpeechRecognizer extends Activity_Base {
                 Timber.d("onResults");
                 List<String> data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 if(data == null) return;
+                resultData.addAll(data);
                 StringBuilder sb = new StringBuilder();
                 for (String d :
                     data) {
@@ -114,6 +119,7 @@ public class Activity_SpeechRecognizer extends Activity_Base {
                     sb.append(d).append("/");
                 }
                 ((TextView)findViewById(R.id.result)).setText(sb.toString());
+                // TODO ここで結果処理する
                 endRecognition();
             }
 
