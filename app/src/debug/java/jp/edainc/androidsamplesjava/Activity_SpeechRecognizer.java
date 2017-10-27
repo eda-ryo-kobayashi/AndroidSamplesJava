@@ -65,8 +65,8 @@ public class Activity_SpeechRecognizer extends Activity_Base {
                     }
                 });
             },
-            this::finish
-        );
+            this::finish);
+
         sr = SpeechRecognizer.createSpeechRecognizer(this);
         sr.setRecognitionListener(new RecognitionListener() {
             @Override
