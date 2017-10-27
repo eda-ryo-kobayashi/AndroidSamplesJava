@@ -1,11 +1,13 @@
 package jp.edainc.androidsamplesjava.ui.activity;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import io.reactivex.functions.Action;
 import jp.edainc.androidsamplesjava.AppContext;
 import jp.edainc.androidsamplesjava.lifecycle.ActivityLifecycleProvider;
 
@@ -67,6 +69,22 @@ public class Activity_Base extends AppCompatActivity implements ActivityContext 
     protected void onDestroy() {
         super.onDestroy();
         provider.onCreate().onChangeLifecycle();
+    }
+
+    public void requestRecordPermission(Action success, Action error) {
+        if(success == null) {
+            throw new IllegalArgumentException("record permission listener must not be null");
+        }
+        permissions.request(Manifest.permission.RECORD_AUDIO)
+            .subscribe(granted -> {
+                if(granted) {
+                    success.run();
+                } else {
+                    if(error != null) {
+                        error.run();
+                    }
+                }
+            });
     }
 
 }
