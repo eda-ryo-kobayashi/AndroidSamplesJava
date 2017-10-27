@@ -31,6 +31,8 @@ public class Activity_Test extends AppCompatActivity {
             return new Intent(a, Activity_Boot.class);
         }),
         MAIN("メイン画面起動", a -> new Intent(a, Activity_Main.class)),
+        TTS("テキストスピーチ画面起動", a -> new Intent(a, Activity_TextToSpeech.class)),
+        SPEECH_RECOGNIZER("音声認識画面起動", a -> new Intent(a, Activity_SpeechRecognizer.class)),
         ;
 
         final String label;

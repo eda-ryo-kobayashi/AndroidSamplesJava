@@ -16,6 +16,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".Activity_TextToSpeech"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".Activity_SpeechRecognizer"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>
