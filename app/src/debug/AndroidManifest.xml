@@ -24,6 +24,10 @@
             android:name=".Activity_SpeechRecognizer"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name=".Activity_VerticalPagingTest"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>

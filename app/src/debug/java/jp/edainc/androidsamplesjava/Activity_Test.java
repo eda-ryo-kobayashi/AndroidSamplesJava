@@ -33,6 +33,7 @@ public class Activity_Test extends AppCompatActivity {
         MAIN("メイン画面起動", a -> new Intent(a, Activity_Main.class)),
         TTS("テキストスピーチ画面起動", a -> new Intent(a, Activity_TextToSpeech.class)),
         SPEECH_RECOGNIZER("音声認識画面起動", a -> new Intent(a, Activity_SpeechRecognizer.class)),
+        VERTICAL_PAGING_TEST("縦スクロールページングテスト", a -> new Intent(a, Activity_VerticalPagingTest.class)),
         ;
 
         final String label;
